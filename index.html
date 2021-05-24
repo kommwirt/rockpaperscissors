@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock-Paper-Scissor - Descission made</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <section class="game">
+      <div class="score container">
+        <div class="user-score">
+          <h2>You</h2>
+          <p>0</p>
+        </div>
+        <div class="tie-score">
+          <h2>Ties</h2>
+          <p>0</p>
+        </div>
+        <div class="computer-score">
+          <h2>Computer</h2>
+          <p>0</p>
+        </div>
+      </div>
+
+      <div class="start-screen">
+        <h1>Rock Paper Scissors</h1>
+        <div class="rounds container">
+          <h2>Choose your rounds</h2>
+          <form>
+            <fieldset>
+              <div class="radio">
+                <input type="radio" name="rounds" id="fiveRounds" value="5" />
+                <label for="fiveRounds">5</label>
+              </div>
+              <div class="radio">
+                <input type="radio" name="rounds" id="tenRounds" value="10" />
+                <label for="tenRounds">10</label>
+              </div>
+              <div class="radio">
+                <input
+                  type="radio"
+                  name="rounds"
+                  id="fifteenRounds"
+                  value="15"
+                />
+                <label for="fifteenRounds">15</label>
+              </div>
+              <div class="radio">
+                <input
+                  type="radio"
+                  name="rounds"
+                  id="twentyRounds"
+                  value="20"
+                />
+                <label for="twentyRounds">20</label>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <button>Let's play</button>
+      </div>
+
+      <div class="fight container fadeout">
+        <div class="hands">
+          <img class="user-hand" src="./assets/img/rock.svg" alt="" />
+          <img class="computer-hand" src="./assets/img/rock.svg" alt="" />
+        </div>
+        <div class="round-counter container">
+          <h2>Rounds</h2>
+          <p>
+            <span id="remain"></span> of <span id="roundsnumber"></span> still
+            to go
+          </p>
+        </div>
+
+        <div class="container">
+          <div>
+            <h3 class="dialog">Choose your option now</h3>
+          </div>
+          <div class="choices">
+            <button class="rock">rock</button>
+            <button class="paper">paper</button>
+            <button class="scissor">scissors</button>
+          </div>
+          <div class="container-new-game container fadeout">
+            <h2></h2>
+            <button class="new-game">Want a new game?</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="/assets/js/app-rps.js"></script>
+  </body>
+</html>
