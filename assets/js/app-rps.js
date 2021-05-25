@@ -34,7 +34,7 @@ const rps = () => {
         const startScreen = document.querySelector(".start-screen");
         const playScreen = document.querySelector(".fight");
         const playStart = document.querySelector(".start-screen button");
-        const dialogStart = document.querySelector(".rounds h2");
+        const dialogStart = document.querySelector(".start-screen h2");
         
         
         
@@ -257,7 +257,27 @@ const rps = () => {
                 
                 
                 else {
-                    dialogStart.textContent = "Please choose a number"
+                    // Just for fun - an array of possible answers
+                    let startDialog = [
+                        "You're tacky and I hate you! Choose a number!",
+                        "Hey dummy! Just choose the number Schneebly!",
+                        "Sixsixsix - get a number, you beast!",
+                        "Read and repeat : I choose a number. Now. Instantly.",
+                        "Listen: There are four numbers. Uno, dos, tres, quatro.",
+                        "Can't you read? Number? Choose? What else you need?",
+                        "You should not sit in front of a computer. Not really.",
+                        "Go to hell Sneebly ... Choose a number!!!!",
+                        "Get off your ath, let's do some math.",
+                        "Wonder how you managed to turn the computer on.",
+                        "I turn on Chatroulette - take your time to choose a number.",
+                        "I'm naked. Totaly. - Oh, just a check if you are able to read."
+                    ]
+                    const randomStartText = () =>{
+                        const dialogStartNumber = Math.floor(Math.random() * 12)
+                        const dialogStartChosen = startDialog [dialogStartNumber]
+                        dialogStart.textContent = dialogStartChosen
+                    }
+                    randomStartText()
                 }
                 
                 
