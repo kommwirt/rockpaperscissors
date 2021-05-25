@@ -166,21 +166,49 @@ const rps = () => {
                         userHand.classList.add('fadeout');
                         compHand.classList.add('fadeout');
                         
+                        // Some text, when noone wins
+                        let textNoWinner =[
+                        "Boring. Boring. Booooooring.",
+                        "Draw. Boring. Booger in the nose.",
+                        "It's even more exciting in my loo!",
+                        "No decision - this is your life, right?",
+                        "You have a life as exciting as a drummer..."
+                        ]
+                        //Some text when user is winning
+                        let textUserWinner = [
+                            "Feel like the guitarist now, don't you?",
+                            "Yes. You won. Go do some headbanging.",
+                            "As long as the loud woman is still singing, the opera is not over.",
+                            "I hate to lose!!! Gotta go to the bathroom. Arghhh.",
+                            "You won. Yes. OK. But I'm sure you hear Oasis too."
+                        ]
+                        // Some text when computer is winning
+                        let textComputerWinner = [
+                            "I am the god of rock and roll! Worship me!",
+                            "Go cry - Or just listen to a little Duran Duran",
+                            "You lost!! Let Celine Dion comfort you.",
+                            "I guitarist - you drummer. The world is injustice. I know.",
+                            "I'm the headliner now. You're not even backstage."
+                        ]
 
+                        const dialogResult = Math.floor(Math.random() * 5)
+                        const dialogResultDraw = textNoWinner[dialogResult]
+                        const dialogResultUser = textUserWinner[dialogResult]
+                        const dialogResultComputer = textComputerWinner[dialogResult]
                         //And also the winner should be display by comparison,so
                         let resultMessage = document.querySelector(".container-new-game h2")
                         if(userScoreIn === computerScoreIn) {
-                            dialog.textContent = "Boooooring draw - let's fight this out again"
+                            dialog.textContent = dialogResultDraw 
                             dancing.classList.add('bored-black');
                             return
                         }
                         else if(userScoreIn > computerScoreIn) {
-                            dialog.textContent = "Hnggg... you've won. Happy now?"
+                            dialog.textContent = dialogResultUser
                             dancing.classList.add('angry-black');
                             return
                         }
                         else{
-                            dialog.textContent = "Me: Grandmaster Flash - You: Zero!"
+                            dialog.textContent = dialogResultComputer
                             dancing.classList.add('dancing-black');
                             return
                         }
@@ -202,13 +230,13 @@ const rps = () => {
                     //Check for rock
                     if(userChoice === 'rock'){
                         if(computerChoice === 'paper'){
-                            dialog.textContent = 'You lose - My paper wraps your rock'
+                            dialog.textContent = 'I ROCK - use your paper to weep your tears!'
                             computerScoreIn++
                             scoring()
                             return
                         }
                         else{
-                            dialog.textContent = 'You win - Your rock harder than my scissor'
+                            dialog.textContent = 'You choose rock. Great. Scissors... naaa.'
                             userScoreIn++
                             scoring()
                             return
@@ -217,13 +245,13 @@ const rps = () => {
                     //Check for paper
                     if(userChoice === 'paper'){
                         if(computerChoice === 'rock'){
-                            dialog.textContent = 'You win - My rock is in your paper'
+                            dialog.textContent = 'You win with paper - I loose by rocking. Not fair.'
                             userScoreIn++
                             scoring()
                             return
                         }
                         else{
-                            dialog.textContent = 'You lose - My scissors cut your paper'
+                            dialog.textContent = 'I cut your paper. Ziiiiing. Loser!'
                             computerScoreIn++
                             scoring()
                             return
@@ -232,13 +260,13 @@ const rps = () => {
                     //Check for scissors
                     if(userChoice === 'scissors'){
                         if(computerChoice === 'paper'){
-                            dialog.textContent = 'You win - scissors cut paper'
+                            dialog.textContent = "You've cut my paper! You really did it! Fraaaanzi!!"
                            userScoreIn++
                             scoring()
                             return
                         }
                         else{
-                            dialog.textContent = 'You lose - My stone is harder than scissors'
+                            dialog.textContent = "Rock'n'Roll!! And you are a scissors sister!"
                             computerScoreIn++
                             scoring()
                             return
