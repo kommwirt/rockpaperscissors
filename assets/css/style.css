@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=New+Rocker&display=swap");
 
 /* General */
 
@@ -35,14 +34,20 @@ h1 {
 
 h2 {
   color: var(--fourth);
-  text-transform: uppercase;
+
   font-weight: 700;
+  font-family: "New Rocker", cursive;
 }
 p {
   color: var(--fifth);
   font-size: 1.25rem;
 }
 
+.logo {
+  background: url("../img/logo.svg") no-repeat center center/contain;
+  min-height: 50%;
+  min-width: 100%;
+}
 .talktome {
   display: flex;
   justify-content: center;
@@ -102,20 +107,26 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  background-color: var(--fifth);
+  justify-content: space-around;
+  background-color: var(--first);
   z-index: 999;
 }
 /* Choose round number */
 
 form {
-  color: var(--first);
+  color: var(--fifth);
+}
+.rounds h2 {
+  color: var(--fifth);
+}
+.start-screen button {
+  background-color: var(--fifth);
+  color: var(--fourth);
 }
 fieldset {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 50px;
   border: none;
 }
 fieldset div {
@@ -131,7 +142,7 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked {
-  border-color: var(--first);
+  border-color: var(--fifth);
 }
 
 /* Game */
@@ -150,11 +161,16 @@ input[type="radio"]:checked {
   justify-content: space-between;
   text-align: center;
   padding: 0 5%;
+  background-color: var(--fifth);
 }
 .score div {
   width: 33%;
 }
-
+.score p {
+  color: var(--first);
+  font-weight: 600;
+  font-size: 2rem;
+}
 .hands {
   display: flex;
   justify-content: space-around;
@@ -164,6 +180,10 @@ input[type="radio"]:checked {
   transform: rotateY(180deg);
 }
 
+.round-counter h2 {
+  text-transform: uppercase;
+  color: var(--fifth);
+}
 #dialog,
 .round-counter {
   text-align: center;
