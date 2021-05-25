@@ -27,7 +27,7 @@
       <div class="start-screen">
         <h1>Rock Paper Scissors</h1>
         <div class="rounds container">
-          <h2>Choose your rounds</h2>
+          <h2>Choose number of games</h2>
           <form>
             <fieldset>
               <div class="radio">
@@ -64,11 +64,12 @@
 
       <div class="fight container fadeout">
         <div class="hands">
-          <img class="user-hand" src="./assets/img/rock.svg" alt="" />
-          <img class="computer-hand" src="./assets/img/rock.svg" alt="" />
+          <img class="user-hand" src="./assets/img/rock.png" alt="" />
+          <div id="dancing"></div>
+          <img class="computer-hand" src="./assets/img/rock.png" alt="" />
         </div>
         <div class="round-counter container">
-          <h2>Rounds</h2>
+          <h2>Laps</h2>
           <p>
             <span id="remain"></span> of <span id="roundsnumber"></span> still
             to go
@@ -76,7 +77,7 @@
         </div>
 
         <div class="container">
-          <div>
+          <div class="talktome container">
             <h3 class="dialog">Choose your option now</h3>
           </div>
           <div class="choices">
@@ -85,7 +86,6 @@
             <button class="scissor">scissors</button>
           </div>
           <div class="container-new-game container fadeout">
-            <h2></h2>
             <button class="new-game">Want a new game?</button>
           </div>
         </div>

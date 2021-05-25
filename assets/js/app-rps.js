@@ -12,6 +12,14 @@ const rps = () => {
     let tieScoreIn = 0;
     let computerScoreIn = 0;
 
+    // Here takes the conversation part
+    const  dialog = document.querySelector(".dialog")
+    const  dancing = document.getElementById('dancing')
+
+     // Were are the choices to see (images?
+     const userHand = document.querySelector(".user-hand")
+     const compHand = document.querySelector(".computer-hand")
+
     // Round and round and round we go
 
     let fiveRounds = document.getElementById('fiveRounds');
@@ -39,6 +47,7 @@ const rps = () => {
 
                 startScreen.classList.add('fadeout');
                 playScreen.classList.add('fadein');
+                
 
                 // Get the given round set
 
@@ -73,9 +82,7 @@ const rps = () => {
                     // We want to get the options from ALL the choices buttons rock, paper scissors
                     const choices = document.querySelectorAll(".choices button")
 
-                    // Were are the choices to see (images?
-                    const userHand = document.querySelector(".user-hand")
-                    const compHand = document.querySelector(".computer-hand")
+                   
 
                     // How does the computer his choice? He should pick from an array:
                     // 0 - 0,49 = rock, 2,5 - 3 = rock , 0,5 - 1,49 = paper, 1,5 - 2,49 = scissors
@@ -98,7 +105,7 @@ const rps = () => {
                             this.style.animation = "";
                             })
                             allHands.forEach(source => {
-                                source.src = `./assets/img/rock.svg`
+                                source.src = `./assets/img/rock.png`
                             })
                         })
 
@@ -121,8 +128,8 @@ const rps = () => {
 
                             // Change the images on the screen, found with Google and tears in my eyes
 
-                            userHand.src = `./assets/img/${this.textContent}.svg`
-                            compHand.src = `./assets/img/${computerChoice}.svg`
+                            userHand.src = `./assets/img/${this.textContent}.png`
+                            compHand.src = `./assets/img/${computerChoice}.png`
 
 
                             }, 1800)
@@ -156,19 +163,25 @@ const rps = () => {
                         const playButtonsAway = document.querySelector(".choices")
                         playButtonsAway.classList.add('fadeout');
                         newGameButtonsIn.classList.remove('fadeout');
+                        userHand.classList.add('fadeout');
+                        compHand.classList.add('fadeout');
+                        
 
                         //And also the winner should be display by comparison,so
                         let resultMessage = document.querySelector(".container-new-game h2")
                         if(userScoreIn === computerScoreIn) {
-                            resultMessage.textContent = "Boooooring draw - let's fight this out again"
+                            dialog.textContent = "Boooooring draw - let's fight this out again"
+                            dancing.classList.add('bored-black');
                             return
                         }
                         else if(userScoreIn > computerScoreIn) {
-                            resultMessage.textContent = "Hnggg... you've won. Happy now?"
+                            dialog.textContent = "Hnggg... you've won. Happy now?"
+                            dancing.classList.add('angry-black');
                             return
                         }
                         else{
-                            resultMessage.textContent = "Me: Grandmaster Flash - You: Zero!"
+                            dialog.textContent = "Me: Grandmaster Flash - You: Zero!"
+                            dancing.classList.add('dancing-black');
                             return
                         }
                         
@@ -177,8 +190,7 @@ const rps = () => {
                 // Compare snippet
 
                 const compareChoices = (userChoice, computerChoice) => {
-                    // Here takes the conversation part
-                    const  dialog = document.querySelector(".dialog")
+                    
                     
                     // First case: tie
                     if(userChoice === computerChoice){

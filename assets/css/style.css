@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
 
 /* General */
@@ -21,7 +22,7 @@
 /* Body, Headings, Text */
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Comic Neue", cursive;
   background-color: var(--third);
   font-size: 18px;
 }
@@ -29,26 +30,58 @@ body {
 h1 {
   font-size: 3rem;
   color: var(--third);
+  font-weight: 700;
 }
 
 h2 {
   color: var(--fourth);
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 700;
 }
 p {
   color: var(--fifth);
   font-size: 1.25rem;
 }
 
-.dialog {
-  padding-bottom: 2%;
-  text-align: center;
+.talktome {
+  display: flex;
+  justify-content: center;
 }
 
+.dialog {
+  position: relative;
+  min-width: 30%;
+  text-align: center;
+
+  margin: 0 auto;
+  background-color: #fff;
+  border: 8px solid var(--fifth);
+  border-radius: 30px;
+  margin-bottom: 2%;
+  padding: 20px;
+}
+.dialog::before,
+.dialog::after {
+  content: " ";
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.dialog::before {
+  left: 30px;
+  bottom: -50px;
+  border: 25px solid;
+  border-color: var(--fifth) transparent transparent #333;
+}
+.dialog::after {
+  left: 38px;
+  bottom: -30px;
+  border: 15px solid;
+  border-color: #fff transparent transparent #fff;
+}
 /* General classes */
 .container {
-  margin-top: 3%;
+  margin: 3% 0;
 }
 
 button {
@@ -140,6 +173,25 @@ input[type="radio"]:checked {
 .computer-hand {
   width: 25%;
 }
+
+#dancing {
+  width: 50%;
+}
+
+.dancing-black {
+  background: url("../img/black_dance.gif") center center/cover;
+  background-repeat: no-repeat;
+}
+.angry-black {
+  background: url("../img/black_nothappy.gif") center center/cover;
+  background-repeat: no-repeat;
+}
+
+.bored-black {
+  background: url("../img/black_whatever.gif") center center/cover;
+  background-repeat: no-repeat;
+}
+
 .choices {
   width: 50%;
   display: flex;
@@ -152,12 +204,7 @@ input[type="radio"]:checked {
   flex-direction: column;
   align-items: center;
 }
-.container-new-game h2 {
-  background-color: var(--fourth);
-  padding: 1%;
-  color: var(--fifth);
-  margin-bottom: 2%;
-}
+
 .new-game {
   background-color: var(--fifth);
   color: var(--first);
