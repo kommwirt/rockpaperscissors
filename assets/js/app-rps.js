@@ -32,7 +32,7 @@ const rps = () => {
     const letsPlay = () => {
         // Needed variables
         const startScreen = document.querySelector(".start-screen");
-        const playScreen = document.querySelector(".fight");
+        const playScreen = document.querySelector(".game");
         const playStart = document.querySelector(".start-screen button");
         const dialogStart = document.querySelector(".start-screen h2");
         
@@ -45,8 +45,9 @@ const rps = () => {
                 if( (fiveRounds.checked == true) || (tenRounds.checked == true) || (fifteenRounds.checked == true) || (twentyRounds.checked == true) ){
                 // Let the starting screen fade out - because everything's done
 
-                startScreen.classList.add('fadeout');
-                playScreen.classList.add('fadein');
+                startScreen.style.display = "none";
+                playScreen.style.display = "block";
+                dancing.style.height="0vh"
                 
 
                 // Get the given round set
@@ -163,8 +164,8 @@ const rps = () => {
                         const playButtonsAway = document.querySelector(".choices")
                         playButtonsAway.classList.add('fadeout');
                         newGameButtonsIn.classList.remove('fadeout');
-                        userHand.classList.add('fadeout');
-                        compHand.classList.add('fadeout');
+                        userHand.style.display = "none";
+                        compHand.style.display = "none";
                         
                         // Some text, when noone wins
                         let textNoWinner =[
@@ -199,16 +200,19 @@ const rps = () => {
                         let resultMessage = document.querySelector(".container-new-game h2")
                         if(userScoreIn === computerScoreIn) {
                             dialog.textContent = dialogResultDraw 
+                            dancing.style.height="40vh"
                             dancing.classList.add('bored-black');
                             return
                         }
                         else if(userScoreIn > computerScoreIn) {
                             dialog.textContent = dialogResultUser
+                            dancing.style.height="40vh"
                             dancing.classList.add('angry-black');
                             return
                         }
                         else{
                             dialog.textContent = dialogResultComputer
+                            dancing.style.height="40vh"
                             dancing.classList.add('dancing-black');
                             return
                         }

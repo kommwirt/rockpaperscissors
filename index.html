@@ -8,8 +8,35 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
+    <div class="start-screen">
+      <div class="logo"></div>
+      <h2>Choose number of games</h2>
+      <div class="rounds container">
+        <form>
+          <fieldset>
+            <div class="radio">
+              <input type="radio" name="rounds" id="fiveRounds" value="5" />
+              <label for="fiveRounds">5</label>
+            </div>
+            <div class="radio">
+              <input type="radio" name="rounds" id="tenRounds" value="10" />
+              <label for="tenRounds">10</label>
+            </div>
+            <div class="radio">
+              <input type="radio" name="rounds" id="fifteenRounds" value="15" />
+              <label for="fifteenRounds">15</label>
+            </div>
+            <div class="radio">
+              <input type="radio" name="rounds" id="twentyRounds" value="20" />
+              <label for="twentyRounds">20</label>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <button>Let's play</button>
+    </div>
     <section class="game">
-      <div class="score container">
+      <div class="score">
         <div class="user-score">
           <h2>You</h2>
           <p>0</p>
@@ -24,51 +51,13 @@
         </div>
       </div>
 
-      <div class="start-screen">
-        <div class="logo"></div>
-        <h2>Choose number of games</h2>
-        <div class="rounds container">
-          <form>
-            <fieldset>
-              <div class="radio">
-                <input type="radio" name="rounds" id="fiveRounds" value="5" />
-                <label for="fiveRounds">5</label>
-              </div>
-              <div class="radio">
-                <input type="radio" name="rounds" id="tenRounds" value="10" />
-                <label for="tenRounds">10</label>
-              </div>
-              <div class="radio">
-                <input
-                  type="radio"
-                  name="rounds"
-                  id="fifteenRounds"
-                  value="15"
-                />
-                <label for="fifteenRounds">15</label>
-              </div>
-              <div class="radio">
-                <input
-                  type="radio"
-                  name="rounds"
-                  id="twentyRounds"
-                  value="20"
-                />
-                <label for="twentyRounds">20</label>
-              </div>
-            </fieldset>
-          </form>
-        </div>
-        <button>Let's play</button>
-      </div>
-
-      <div class="fight container fadeout">
+      <div class="fight container">
         <div class="hands">
           <img class="user-hand" src="./assets/img/rock.png" alt="" />
           <div id="dancing"></div>
           <img class="computer-hand" src="./assets/img/rock.png" alt="" />
         </div>
-        <div class="round-counter container">
+        <div class="round-counter">
           <h2>Chords</h2>
           <p>
             <span id="remain"></span> of <span id="roundsnumber"></span> still
