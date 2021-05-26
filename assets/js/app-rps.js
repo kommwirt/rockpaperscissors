@@ -86,9 +86,9 @@ const rps = () => {
                    
 
                     // How does the computer his choice? He should pick from an array:
-                    // 0 - 0,49 = rock, 2,5 - 3 = rock , 0,5 - 1,49 = paper, 1,5 - 2,49 = scissors
+                    
         
-                    const computerOptions = ["rock", "paper", "scissors", "rock"]
+                    const computerOptions = ["rock", "paper", "scissors"]
 
                     
                     
@@ -113,7 +113,7 @@ const rps = () => {
                             // To get the relation to this array the computer generates a random number between 0 and 3
                             
 
-                            const compNumbers = Math.floor(Math.random() * 4)
+                            const compNumbers = Math.floor(Math.random() * 3)
 
                             // Now we match the index of the given array with the generated number
                             const computerChoice = computerOptions[compNumbers]
