@@ -15,7 +15,7 @@ const rps = () => {
     // Here takes the conversation part
     const  dialog = document.querySelector(".dialog")
     const  dancing = document.getElementById('dancing')
-
+    const roundCounter = document.querySelector(".round-counter")
      // Were are the choices to see (images?
      const userHand = document.querySelector(".user-hand")
      const compHand = document.querySelector(".computer-hand")
@@ -200,20 +200,24 @@ const rps = () => {
                         let resultMessage = document.querySelector(".container-new-game h2")
                         if(userScoreIn === computerScoreIn) {
                             dialog.textContent = dialogResultDraw 
+                            roundCounter.classList.add('fadeout');
                             dancing.style.height="40vh"
                             dancing.classList.add('bored-black');
                             return
                         }
                         else if(userScoreIn > computerScoreIn) {
                             dialog.textContent = dialogResultUser
+                            roundCounter.classList.add('fadeout');
                             dancing.style.height="40vh"
                             dancing.classList.add('angry-black');
                             return
                         }
                         else{
                             dialog.textContent = dialogResultComputer
+                            roundCounter.classList.add('fadeout');
                             dancing.style.height="40vh"
                             dancing.classList.add('dancing-black');
+                           
                             return
                         }
                         
