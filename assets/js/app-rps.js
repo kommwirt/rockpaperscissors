@@ -163,7 +163,9 @@ const rps = () => {
                     if(newRemainRounds == 0){
                         const playButtonsAway = document.querySelector(".choices")
                         playButtonsAway.classList.add('fadeout');
+                        setTimeout(() => {
                         newGameButtonsIn.classList.remove('fadeout');
+                    }, 4000)
                         userHand.style.display = "none";
                         compHand.style.display = "none";
                         
